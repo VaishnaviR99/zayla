@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+   <!-- stylesheet -->
+   <link rel="stylesheet" href="../styles/Payment.css" />
+
+   <!-- vendors -->
+
+   <!-- Jquery -->
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+   <!-- Fonteawesome -->
+   <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+   />
+ 
+  
+</head>
+<body>
+    <main id="paymentSec">
+        <h1>Payment</h1>
+        <div id="notify-box"></div>
+        <div id="cart-container"></div>
+       
+       
+        <!-- <div id="payment-methods">
+            <h3>Select Payment Method:</h3>
+            <button class="payment-btn" data-method="Credit Card">Credit Card</button>
+            <button class="payment-btn" data-method="PayPal">PayPal</button>
+            <button class="payment-btn" data-method="Cash on Delivery">Cash on Delivery</button>
+        </div> -->
+        <div class="payment-amount"> <h4 id="total-amount"></h4><button id="complete-payment-btn">Pay With Paypal</button></div>
+        
+    </main>
+</body>
+<script src="../script/Payment.js"></script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect to Login page</title>
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #redirect {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 60%;
+      height: 60vh;
+      margin: auto;
+      margin-top: 4rem;
+    }
+    #redirect i{
+        font-size: 6rem;
+    }
+    #login-btn {
+      padding: 0.6rem 1.5rem;
+      background-color: black;
+      border: none;
+      color: white;
+      border-radius: .5rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div id="redirect">
+        <i class="fa-regular fa-user"></i>
+      <h2>Login to view your saved items</h2>
+      <button id="login-btn">Login / Signup</button>
+    </div>
+  </body>
+  <script>
+    $(()=>{
+        $("#login-btn").on("click", function () {
+        console.log("Login");
+        window.location.href = "./login.html";
+      });
+    })
+  </script>
+</html>

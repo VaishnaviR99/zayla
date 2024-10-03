@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail page</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../styles/Detail-Page.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="nav-placeholder"></div>
+    <main>
+      <div id="notify-box"></div>
+      <section id="product_detail"></section>
+
+      <section id="review-input">
+        <div class="review-form">
+          <div class="rating">
+            <input value="5" name="rating" id="star5" class="star" type="radio" />
+            <label for="star5"></label>
+            <input value="4" name="rating" id="star4" type="radio" class="star" />
+            <label for="star4"></label>
+            <input value="3" name="rating" id="star3" type="radio" class="star"  />
+            <label for="star3"></label>
+            <input value="2" name="rating" id="star2" type="radio" class="star" />
+            <label for="star2"></label>
+            <input value="1" name="rating" id="star1" type="radio" class="star"  />
+            <label for="star1"></label>
+          </div>
+          <div class="inputarea">
+            <textarea
+              class="userReview"
+              id="userReview"
+              placeholder="Write your review here..."
+            ></textarea>
+           
+          </div>
+
+          <button class="submit-btn" type="submit">Submit Review</button>
+        </div>
+        <img src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Review_bm6chw.jpg" alt="reviewimg"/>
+      </section>
+
+      <!-- <h5 class="reviews-title">Customer Reviews</h5> -->
+      <section id="review-list"></section>
+    </main>
+  </body>
+  <script type="module" src="../script/Detail-Page.js"></script>
+</html>

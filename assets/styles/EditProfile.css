@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+main {
+  width: 100%;
+}
+
+#title {
+  margin-top: 5rem;
+  color: #039dfd;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Notification container */
+#notify-box{
+  position:fixed;
+  min-width: 350px;
+  max-width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  padding: .8rem;
+  position: fixed;
+  visibility: hidden;
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+
+#notify-box.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+#profile-form{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+/* padding: 2rem; */
+}
+
+.inputDiv {
+    
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+.input-field {
+  position: relative;
+  width: 100%;
+  margin: 0.5rem;
+  text-align: left;
+  border-radius: 0.5rem;
+}
+
+.input-field label {
+  position: absolute;
+  top: -0.7rem;
+  left: 1rem;
+  background-color: #ffffff;
+  padding: 0.2rem;
+  color: #039dfd;
+}
+
+.input-field input {
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+input[readonly]:focus {
+  outline: none;
+}
+input[readonly] {
+  border: 1px solid #a5d3f0;
+  color: gray;
+}
+input:not(:read-only) {
+  border: 2px solid #039dfd;
+}
+input:not(:read-only):focus {
+  background-color: rgba(3, 157, 223, 0.1);
+}
+
+.saveChanges {
+    margin-top: 1rem;
+  width: 50%;
+  bottom: 0.2rem;
+  padding: 0.5rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+}
+
+.saveChanges:hover {
+  background-color: rgb(53, 51, 51);
+}
+
+@media screen and (min-width: 480px)   {
+   
+ .inputDiv {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .input-field:last-child {
+    margin: auto;
+  }
+  .input-field {
+    margin: auto;
+  }
+  
+}
+
+

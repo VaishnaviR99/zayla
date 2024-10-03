@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #039dfd;
+      color: white;
+      padding: 1rem 0.5rem;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-direction: row;
+      padding: .5rem;
+    }
+
+    .footer-links {
+        width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .credit{
+        width: 60%;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #d8f1f2;
+    }
+
+    .social-netw {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-netw a {
+      color: white;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .social-netw a:hover {
+      color: #d8f1f2;
+    }
+
+    footer p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    @media  screen and (min-width: 480px) and (max-width: 768px) {
+        .footer-container{
+            width: 70%;
+            margin: auto;
+        }
+    }
+    @media  screen and (min-width: 769px) {
+        .footer-container{
+            width: 60%;
+            margin: auto;
+        }
+    }
+  </style>
+  <body>
+   
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="Contact-Us.html">Contact Us</a>
+          <a href="About-us.html">About Us</a>
+          <a href="FAQ.html">FAQ</a>
+        </div>
+
+        <div class="credit">
+          <div class="social-netw">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <p>2024 E-commerce Website. All rights reserved.</p>
+          <p>© 2024 Zyla. Developed by Vaishnavi.</p>
+
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

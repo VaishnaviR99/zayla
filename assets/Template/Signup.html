@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Singup</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../styles/Singup.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="notify-box"></div>
+
+      <form id="regForm" action="#" method="post">
+        <h2>Sing Up</h2>
+        <div id="tabBox">
+          <!-- One "tab" for each step in the form: -->
+          <div class="tab">
+            <h3>Personal Details</h3>
+
+            <div class="input-field">
+              <label for="firstnameInput">First Name</label>
+              <input
+                type="text"
+                name="firstname"
+                value=""
+                oninput="this.className = ''"
+                id="firstnameInput"
+                placeholder="Enter Firstname"
+                class="input-box"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="lastnameInput">Last Name</label>
+              <input
+                type="text"
+                name="lastname"
+                value=""
+                oninput="this.className = ''"
+                id="lastnameInput"
+                placeholder="Enter Lastname"
+                class="input-box"
+              />
+            </div>
+          </div>
+          <div class="tab">
+            <h3>Contact details</h3>
+
+            <div class="input-field">
+              <label for="emailInput">Email</label>
+              <input
+                type="email"
+                name="email"
+                value=""
+                oninput="this.className = ''"
+                id="emailInput"
+                placeholder="Enter Email"
+                class="input-box"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="phoneInput">Mobile</label>
+              <input
+                type="number"
+                name="phone"
+                value=""
+                oninput="this.className = ''"
+                id="phoneInput"
+                placeholder="Enter Mobile No."
+                class="input-box"
+              />
+            </div>
+          </div>
+          <div class="tab">
+            <h3>Address:</h3>
+            <div class="input-field">
+              <label for="streetNoInput">State.</label>
+              <input
+                type="text"
+                name="state"
+                value=""
+                oninput="this.className = ''"
+                id="stateInput"
+                placeholder="Enter state"
+                class="input-box"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="cityInput">City</label>
+              <input
+                type="text"
+                oninput="this.className = ''"
+                name="city"
+                value=""
+                oninput="this.className = ''"
+                id="cityInput"
+                placeholder="Enter City"
+                class="input-box"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="streetInput">Street</label>
+              <input
+                type="text"
+                name="street"
+                value=""
+                oninput="this.className = ''"
+                id="streetInput"
+                placeholder="Enter Street"
+                class="input-box"
+              />
+            </div>
+
+            <div class="input-field">
+              <label for="zipcodeInput">Zipcode</label>
+              <input
+                type="number"
+                name="zipcode"
+                value=""
+                oninput="this.className = ''"
+                id="zipcodeInput"
+                placeholder="Enter Zipcode"
+                class="input-box"
+              />
+            </div>
+          </div>
+
+          <div class="tab">
+            <h3>Login Info:</h3>
+
+            <div class="input-field">
+              <div class="input">
+                <label for="usernameInput">Username</label>
+                <input
+                  type="text"
+                  name="username"
+                  value=""
+                  oninput="this.className = ''"
+                  id="usernameInput"
+                  placeholder="Enter Username"
+                  class="input-box"
+                />
+              </div>
+              <span style="margin-right: 0.5rem;"> <i class="fa-regular fa-user"></i></span>
+             
+            </div>
+
+            <div class="input-field">
+              <div class="input">
+                <label for="passInput">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  value=""
+                  oninput="this.className = ''"
+                  id="passInput"
+                  class="input-box"
+                  placeholder="Enter Password"
+                />
+              </div>
+              <span class="tooltip" style="margin-right: 0.5rem;"><i class="fa-solid fa-question"><span class="tooltiptext">8 + characters, uppercase letters, numbers and symbols ( like @ # $ % ^ & *)</span></i></span>
+            </div>
+           <div class="input-field">
+              <div class="input">
+                <label for="ConfirmpassInput">Confirm Password</label>
+                <input
+                  type="password"
+                  name="Confirmpassword"
+                  value=""
+                  oninput="this.className = ''"
+                  id="ConfirmpassInput"
+                  class="input-box"
+                  placeholder="Enter Password"
+                />
+              </div>
+              <span style="margin-right: 0.5rem;"><i class="fa-regular fa-eye-slash"></i></span>
+            </div>
+          </div>
+
+          <div id="navigBox">
+            <button type="button" id="prevBtn" class="navBtn">
+              <i class="fa-solid fa-chevron-left"></i> &nbsp;Previous
+            </button>
+            <button type="button" id="nextBtn" class="navBtn">
+              Next &nbsp; <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button style="display: none" type="submit" id="signup-btn">
+              Sign Up
+            </button>
+          </div>
+        </div>
+        <!-- Circles which indicate the steps of the form: -->
+        <div style="text-align: center; margin-top: 40px">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      </form>
+
+      <p class="login-account">
+        Already have an account?<a href="./Login.html"> &nbsp;Log In</a>
+      </p>
+    </main>
+  </body>
+  <script type="module" src="../script/Singup.js"></script>
+</html>

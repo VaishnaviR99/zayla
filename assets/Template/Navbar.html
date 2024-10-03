@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <style>
+    /* Navigation bar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      z-index: 7;
+      width: 100%;
+      display: flex;
+      background-color: #ffff;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: first baseline;
+      padding: 0.5rem 1.5rem;
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+      margin-bottom: 1rem;
+    }
+    .nav_content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .nav_content i {
+      position: relative;
+      border-bottom: 3px solid transparent;
+      padding: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s linear;
+    }
+    .nav_content i:hover {
+      border-bottom: 3px solid #7DEDFF;
+    }
+
+    /* user profile modal */
+
+
+.fa-user:hover +.profile-modal{
+  visibility: visible;
+  opacity: 1;
+}
+.profile-modal:hover { 
+  visibility: visible;
+  opacity: 1;
+}
+
+.profile-modal{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  height: auto;
+  width: 200px;
+  top: 3.5rem;
+  right: 1.5rem;
+  z-index: 5;
+  background-color: #ffff;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+hr{
+  border-bottom:1px solid #dbe5ef;
+margin-bottom: 0.8rem;
+}
+.greeting{
+  margin-bottom: 1rem;
+}
+.user-actions1 p:first-child{
+font-weight: bold;
+margin-bottom: .5rem;
+}
+.user-actions1 p:nth-child(2){
+color:rgb(171,172,180);
+font-size: small;
+  margin-bottom: 0.5rem;
+}
+
+
+.user-actions2 p:first-child{
+  font-weight: bold;
+  margin-bottom: .5rem;
+  }
+  .user-actions2 p:nth-child(2){
+  color:var(--color5);
+  font-size: small;
+  font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+#login-btn{
+  padding: 0.6rem 0.8rem;
+    background-color: black;
+    border: none;
+    color: white;
+    margin: auto;
+    font-weight: bold; 
+    margin-left: 15%;
+    cursor: pointer;
+   }
+   #logged-in-actions{
+    margin-top: 0.5rem;
+   }
+   #logged-in-actions p{
+    margin-bottom: 0.3rem;
+    color:rgb(171,172,180);
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+   }
+   #logged-in-actions p:hover{
+    font-weight: 600;
+    color:black;
+   }
+
+    .notification-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.5rem;
+      display: none;
+      border: 1px solid red;
+    }
+  </style>
+  <body>
+    <nav>
+      <h1>Zyla</h1>
+      <div class="nav_content">
+        <i class="fa-solid fa-bag-shopping">
+          <span class="notification-badge" id="cart-badge"></span>
+        </i>
+        <i class="fa-solid fa-heart">
+          <span class="notification-badge" id="wishlist-badge"></span>
+        </i>
+        <i class="fa-solid fa-user"></i>
+
+        <div class="profile-modal">
+          <div class="greeting">
+            <div class="user-actions1">
+              <p>Welcome</p>
+              <p>To access acount and manage orders.</p>
+              <button id="login-btn">Login / Signup</button>
+            </div>
+            <div class="user-actions2">
+              <p>Hello</p>
+              <p class="username"></p>
+            </div>
+          </div>
+          <hr />
+
+          <div id="logged-in-actions">
+            <p id="orders-btn">Orders</p>
+            <p id="wishlist-btn">Wishlist</p>
+            <p id="contact-us-btn">Contact Us</p>
+            <p id="about-us-btn">About Us</p>
+            <p id="FAQ-btn">FAQ</p>
+            <hr />
+            <p id="edit-profile-btn">Edit Profile</p>
+            <p id="logout-btn">Logout</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+  <script>
+    $(() => {
+      $("nav h1").click(() => {
+        window.location.href = "/task_7/index.html";
+      });
+      $(".profile-modal").hover(function () {
+        $(".fa-user").css("border-bottom", "3px solid  #7DEDFF");
+      });
+
+      const userDetails = JSON.parse(localStorage.getItem("loggedInUser"));
+      // Show/hide user actions based on local storage
+      if (userDetails) {
+        $(".user-actions1").hide();
+        $(".user-actions2 .username").text(userDetails.email);
+        $(".user-actions2").show();
+      } else {
+        $(".user-actions1").show();
+        $(".user-actions2").hide();
+      }
+
+      //Edit profile onclick event
+      $("#edit-profile-btn").on("click", function () {
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+          window.location.href = "./Redirect_Login.html";
+
+          return;
+        }
+        window.location.href = "./EditProfile.html";
+      });
+
+      //redirect to wishlist page
+      $("#wishlist-btn").on("click", function () {
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+          window.location.href = "./Redirect_Login.html";
+
+          return;
+        }
+        window.location.href = "./Wishlist.html";
+      });
+      //redirect to orders page
+      $("#orders-btn").on("click", function () {
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+          window.location.href = "./Redirect_Login.html";
+
+          return;
+        }
+        window.location.href = "./Orders.html";
+      });
+
+      // Handle login/signup button
+      $("#login-btn").on("click", function () {
+        console.log("Login");
+        window.location.href = "./login.html";
+      });
+
+       // Handle FAQ button
+       $("#FAQ-btn").on("click", function () {
+        
+        window.location.href = "./FAQ.html";
+      });
+        // Handle About us button
+        $("#about-us-btn").on("click", function () {
+       
+        window.location.href = "./About-us.html";
+      });
+        // Handle Contact us button
+        $("#contact-us-btn").on("click", function () {
+       
+       window.location.href = "./Contact-Us.html";
+     });
+
+      //handle cart icon  on click event
+      $(".fa-bag-shopping").click(function () {
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+          window.location.href = "./Redirect_Login.html";
+
+          return;
+        }
+        window.location.href = "./Cart.html";
+      });
+
+      //handle wishlist icon on click event
+      $(".fa-heart").click(function () {
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+        if (!user) {
+         
+         window.location.href = "./Redirect_Login.html";
+         
+             return;
+           }
+        window.location.href = "./Wishlist.html";
+      });
+
+      $("#logout-btn").click(function () {
+        localStorage.removeItem("loggedInUser");
+        $(".user-actions1").show();
+        $(".user-actions2").hide();
+        window.location.href = "/task_7/index.html";
+      });
+
+      // Function to update badges
+      function updateBadges() {
+        console.log("badge");
+        let user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || {};
+        let userCart = cart[user.id] || [];
+
+        const wishlist = JSON.parse(localStorage.getItem("wishlist")) || {};
+        let userWishlist = wishlist[user.id] || [];
+
+        const cartLength = userCart.length;
+        const wishlistLength = userWishlist.length;
+
+        if (cartLength > 0) {
+          $("#cart-badge").text(cartLength).show();
+        } else {
+          $("#cart-badge").hide();
+        }
+
+        if (wishlistLength > 0) {
+          $("#wishlist-badge").text(wishlistLength).show();
+        } else {
+          $("#wishlist-badge").hide();
+        }
+      }
+
+      // Initial badge update
+      updateBadges();
+    });
+  </script>
+</html>

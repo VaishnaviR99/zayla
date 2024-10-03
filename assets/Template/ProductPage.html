@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../styles/PrdouctPage.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    
+    <main>
+      <div class="header-container">
+        <h2 style="color: #039dfd" id="categoryTitle"></h2>
+        <select id="sort-options">
+          <option value="default">Sort By</option>
+          <option value="priceLowHigh">Price: Low to High</option>
+          <option value="priceHighLow">Price: High to Low</option>
+          <option value="ratingHighLow">Rating: High to Low</option>
+          <option value="ratingLowHigh">Rating: Low to High</option>
+        </select>
+      </div>
+      <div id="notify-box"></div>
+      <div id="productsList"></div>
+
+      <button id="scrollToTopBtn" class="scroll-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </main>
+  </body>
+  <script type="module" src="../script/ProductPage.js"></script>
+</html>

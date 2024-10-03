@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZAYLA</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+
+    <!-- vendors -->
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="light-theme">
+    
+    <nav>
+      <h1>Zyla</h1>
+      <div class="nav_content">
+        <i class="fa-solid fa-bag-shopping">
+          <span class="notification-badge" id="cart-badge"></span>
+        </i>
+        <i class="fa-solid fa-heart">
+          <span class="notification-badge" id="wishlist-badge"></span>
+        </i>
+        <i class="fa-solid fa-user"></i>
+
+        <div class="profile-modal">
+          <div class="greeting">
+            <div class="user-actions1">
+              <p>Welcome</p>
+              <p>To access acount and manage orders.</p>
+              <button id="login-btn">Login / Signup</button>
+            </div>
+            <div class="user-actions2">
+              <p>Hello</p>
+              <p class="username"></p>
+            </div>
+          </div>
+          <hr />
+
+          <div id="logged-in-actions">
+            <p id="orders-btn">Orders</p>
+            <p id="wishlist-btn">Wishlist</p>
+            <p id="contact-us-btn">Contact Us</p>
+            <p id="about-us-btn">About Us</p>
+            <p id="FAQ-btn">FAQ</p>
+            <hr />
+            <p id="edit-profile-btn">Edit Profile</p>
+            <p id="logout-btn">Logout</p>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header>
+      <!--  Top image slide show -->
+      <div class="slider">
+        <div class="slider-container">
+          <div class="slider-item">
+            <img
+              src="https://media.istockphoto.com/id/1293366109/photo/this-one-match-perfect-with-me.jpg?s=612x612&w=0&k=20&c=wJ6yYbRrDfdmoViuQkX39s2z_0lCiNQYgEtLU--0EbY="
+              alt="mens"
+            />
+          </div>
+
+          <div class="slider-item">
+            <img
+              src="https://img.freepik.com/free-photo/portrait-handsome-confident-stylish-hipster-lambersexual-modelman-dressed-green-sweater-jeans-fashion-male-posing-studio-near-blue-wall_158538-24057.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716681600&semt=ais_user"
+              alt="mens"
+            />
+          </div>
+
+          <div class="slider-item">
+            <img
+              src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?cs=srgb&dl=pexels-jmendezrf-1536619.jpg&fm=jpg"
+              alt="mens"
+            />
+          </div>
+
+          <div class="slider-item">
+            <img
+              src="https://img.freepik.com/free-photo/cute-woman-bright-hat-purple-blouse-is-leaning-stand-with-dresses-posing-with-package-isolated-background_197531-17610.jpg"
+              alt="mens"
+            />
+          </div>
+
+          <div class="slider-item">
+            <img
+              src="https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg?cs=srgb&dl=pexels-dima-valkov-1186343-3266700.jpg&fm=jpg"
+              alt="mens"
+            />
+          </div>
+          <div class="slider-item">
+            <img
+              src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/model-jwellery_qlcjog.jpg"
+              alt="mens"
+            />
+          </div>
+
+          <div class="slider-item">
+            <img
+              src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Electronics_lrjvlg.jpg"
+              alt="mens"
+            />
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Search input  -->
+      <div class="searchBox">
+        <input type="search" id="searchInput" placeholder="Search for products.." />
+        <button class="searchbtn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+    </header>
+
+    <main class="mainCont">
+      <div class="searchRes" style="display: none;"><h3>SEARCH RESULTS</h3><i class="fa-solid fa-xmark"></i></div>
+      <div id="productsList"></div>
+      <div id="noResults" style="display: none;">No product found !</div>
+
+      <h3 class="shopByCate">SHOP BY CATEGORY</h3>
+
+      <div id="categories">
+        <a href="#" class="grid-item" data-value="men's clothing">
+          <img
+            src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Male-Cloth_fyyrzb.jpg"
+            alt="Image 1"
+            height="200"
+            width="300"
+          />
+          <p>Men's Clothing</p>
+        </a>
+        <a href="#" class="grid-item" data-value="women's clothing">
+          <img
+            src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838912/Cloths_kpwmp2.jpg"
+            alt="Image 2"
+            height="200"
+            width="300"
+          />
+          <p>Women's Clothing</p>
+        </a>
+        <a href="#" class="grid-item" data-value="jewelery">
+          <img
+            src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/model-jwellery_qlcjog.jpg"
+            alt="Image 3"
+            height="200"
+            width="300"
+          />
+          <p>Jewellery</p>
+        </a>
+        <a href="#" class="grid-item" data-value="electronics">
+          <img
+            src="https://res.cloudinary.com/dxguqzge7/image/upload/v1682838911/Electronics_lrjvlg.jpg"
+            alt="Image 4"
+            height="200"
+            width="300"
+          />
+          <p>Electronics</p>
+        </a>
+      </div>
+      
+      <button id="scrollToTopBtn" class="scroll-to-top-btn">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-links">
+          <a href="./assets/Template/Contact-Us.html">Contact Us</a>
+          <a href="./assets/Template/About-us.html">About Us</a>
+          <a href="./assets/Template/FAQ.html">FAQ</a>
+        </div>
+
+        <div class="credit">
+          <div class="social-netw">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-google"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </div>
+          <p>2024 E-commerce Website. All rights reserved.</p>
+          <p>© 2024 Zyla. Developed by Vaishnavi.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script type="module" src="./assets/script/index.js"></script>
+</html>

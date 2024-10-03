@@ -1,0 +1,165 @@
+
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 100%;
+  position: relative;
+  padding: 1rem;
+}
+#title{
+  color: #039dfd;
+margin-top: 1rem;
+  text-align: center;
+}
+
+#checkout-container{
+ height: 80vh;
+ overflow-y: scroll;
+  width: 100%;
+  padding: 1rem;
+}
+.addr{
+  font-weight: bold;
+  color: black;
+  
+}
+
+.user-address{
+  color:#666666;
+}
+
+
+/* User Details Section */
+#user-details {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: .5rem;
+  border-radius: .5rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+ 
+}
+
+#user-details p {
+  position: relative;;
+  margin: .5rem 0;
+  font-size: small;
+}
+
+
+#edit-details-btn {
+position: relative;
+text-align: right;
+margin-left: auto;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#edit-details-btn:hover {
+  background-color: #d6e4ed;
+}
+
+/* Product List Section */
+
+#cart-products{
+  margin-top: 2rem;
+  
+}
+#product-list {
+  margin-top: .5rem;
+  margin-bottom: 20px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.product-card img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+
+
+.product-card p {
+  margin: 5px 0;
+}
+
+/* Continue Button */
+#continue-btn {
+  position: fixed;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 1rem;
+  padding: .6rem;
+  background-color: black;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+}
+
+#continue-btn:hover {
+  background-color: rgb(40, 39, 39);
+ 
+}
+
+@media  screen and (min-width: 480px) and (max-width: 768px) {
+  .addr{
+    margin-left: 5rem;
+  }
+  #user-details{
+   margin: 1rem 5rem;
+  }
+  #cart-products{
+    margin: 1rem 5rem;
+  }
+  
+  
+}
+@media  screen and (min-width: 769px) {
+  .addr{
+    margin-left: 8rem;
+  }
+  #user-details{
+   margin: 1rem 8rem;
+  }
+  #cart-products{
+    margin: 1rem 8rem;
+  }
+
+  
+   #continue-btn {
+    position: fixed;
+    left: 80%;
+    right: 2rem;
+    bottom: 1rem;
+   padding: .6rem;
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+  }
+  
+}

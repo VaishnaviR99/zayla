@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="../styles/Checkcout.css">
+
+    <!-- vendors -->
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+</head>
+<body>
+    <main>
+        <h1 id="title">Checkout</h1>
+        <div id="checkout-container">
+            <p class="addr">Address</p>
+            <div id="user-details" class="user-details">
+               
+                  <p><strong id="user-name"></strong> </p>
+                  <p id="user-address"></p>
+                  <p>Mobile:<strong id="user-phone"></strong> </p>
+                
+                <button id="edit-details-btn">Edit Details</button>
+              </div>
+            
+            <div id="cart-products">
+                <p>Delivery Estimate</p>
+                <div id="product-list"></div>
+            </div>
+            <button id="continue-btn">Continue</button>
+        </div>
+    </main>
+</body>
+<script src="../script/Checkout.js"></script>
+</html>

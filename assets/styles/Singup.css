@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Notification container */
+#notify-box {
+  position: absolute;
+  min-width: 200px;
+  top: 30px;
+  z-index: 3;
+  padding: 0.6rem;
+  position: fixed;
+  visibility: hidden;
+  text-align: center;
+  color: white;
+}
+
+#notify-box.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Input container */
+#regForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  width: 80%;
+  /* min-width: 300px; */
+  margin-bottom: -1rem;
+}
+
+.fa-question {
+  border: 1px solid black;
+  font-size: small;
+  padding: 0.2rem.35rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* tootltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 10rem;
+  height: 4rem;
+  background-color: #555;
+  font-size: 0.5rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify;
+  border-radius: 6px;
+  padding: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+/* Input field */
+.input-field {
+  position: relative;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0.3rem; */
+  border: 1px solid rgb(179, 220, 245);
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+.input-box {
+  border: none;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: transparent;
+  
+}
+.input{
+  width: 100%;
+}
+.input-field label {
+  position: absolute;
+  color: transparent;
+  left: 1rem;
+  top: 1rem;
+  transition: 0.2s;
+}
+
+.input-field:focus-within label {
+  color: #039dfd;
+  padding: 0 0.3rem;
+  top: -0.5rem;
+  left: 1rem;
+  background-color: #ffff;
+}
+.input-field:focus-within {
+  border: 2px solid #039dfd;
+  box-shadow: rgba(39, 58, 151, 0.1) 0px 20px 25px -5px,
+    rgba(20, 12, 132, 0.04) 0px 10px 10px -5px;
+}
+input {
+  border: none;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: transparent;
+  width: 100%;
+  font-size: 15px;
+}
+input:focus {
+  outline: none;
+  border: none;
+}
+
+.forgot-pass {
+  margin-left: 50%;
+  color: gray;
+  cursor: pointer;
+}
+#signup-btn {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+#signup-btn:hover {
+  background-color: rgb(53, 52, 52);
+}
+.login-account {
+  margin-top: 2rem;
+}
+.login-account a {
+  text-decoration: none;
+  color: #039dfd;
+}
+
+/* new form sliding */
+#navigBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBtn {
+  color: #039dfd;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+#tabBox {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.tab {
+  display: none;
+  width: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+.step.finish {
+  background-color: #039dfd;
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+}
+
+/* Animations */
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  #regForm {
+    width: 80%;
+  }
+
+  #tabBox {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 769px) {
+  #regForm {
+    width: 80%;
+  }
+
+  #tabBox {
+    width: 50%;
+  }
+}

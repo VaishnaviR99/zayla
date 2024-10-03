@@ -1,0 +1,168 @@
+
+*{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Notification container */
+#notify-box{
+    position: absolute;
+    min-width: 200px;
+    top: 4rem;
+    left: 2rem;
+    z-index: 3;
+    padding: 0.6rem;
+    position: fixed;
+    visibility: hidden;
+    text-align: center;
+    color: white;
+  }
+  
+  
+  #notify-box.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+#paymentSec {
+    position: relative;
+    width: 90%;
+   height:85vh;
+    margin:0  auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 1rem;
+   
+    overflow: hidden;
+}
+#cart-container{
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* height: 60vh; */
+    overflow-y: scroll;
+   
+   
+    
+}
+
+h1 {
+    color:#039dfd;
+}
+
+#cart-container {
+    margin: 2rem 1rem;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    
+    
+}
+
+.cart-item img {
+    width: 40px;
+    height: 40px;
+    margin: .5rem;
+}
+
+
+
+#total-amount {
+    margin-top: 20px;
+  
+}
+.detail span{
+    font-weight: bold;
+}
+
+#payment-methods {
+    margin-top: 20px;
+}
+.payment-amount{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.payment-btn {
+    padding: 10px 20px;
+    background-color:;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px; #039dfd
+    cursor: pointer;
+   
+}
+
+.payment-btn:hover {
+    background-color: #027bc7;
+}
+
+#complete-payment-btn {
+    padding: 10px 20px;
+    background-color:  #039dfd;
+    color: #ffffff;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#complete-payment-btn:hover {
+    background-color:  #0735a9;
+}
+
+.spin i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color :#027bc7;
+    font-size: xx-large;
+    background-color: rgba(35, 34, 34,.5);
+    text-align: center;
+    border-radius: 50%;
+    padding: 1rem;
+    
+}
+
+
+
+@media  screen and (min-width: 480px) and (max-width: 768px) {
+
+    .cart-item {
+        margin: 1rem 3rem;
+    }
+    .payment-amount{
+      
+        padding: 1rem 3rem;
+        
+        
+    }
+        
+  }
+  @media  screen and (min-width: 769px) {
+    .cart-item {
+        margin: 1rem 5rem;
+    }
+    .payment-amount{
+      
+        padding: 1rem 5rem;
+        
+        
+    }
+    
+  }
+

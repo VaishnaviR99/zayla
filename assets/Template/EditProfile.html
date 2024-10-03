@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+     <!-- stylesheet -->
+     <link rel="stylesheet" href="../styles/EditProfile.css" />
+
+     <!-- vendors -->
+ 
+     <!-- Jquery -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ 
+     <!-- Fonteawesome -->
+     <link
+       rel="stylesheet"
+       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+     />
+</head>
+<body>
+    <div id="navbar"></div>
+    <div id="notify-box"></div>
+    <h1 id="title">User Profile</h1>
+    <main>
+       
+            <form id="profile-form">
+                <div class="inputDiv"> <div class="input-field">
+                    <label for="emailInput">Email</label>
+                    <input type="email" id="emailInput" name="email" readonly>
+                </div>
+                <div class="input-field">
+                    <label for="usernameInput">Username</label>
+                    <input type="text" id="usernameInput" name="username" readonly>
+                </div>
+                <div class="input-field">
+                    <label for="firstnameInput">First Name</label>
+                    <input type="text" id="firstnameInput" name="firstname"   >
+                </div>
+                <div class="input-field">
+                    <label for="lastnameInput">Last Name</label>
+                    <input type="text" id="lastnameInput" name="lastname" >
+                </div>
+                <div class="input-field">
+                    <label for="phoneInput">Mobile</label>
+                    <input type="text" id="phoneInput" name="phone" >
+                </div>
+                <div class="input-field">
+                    <label for="cityInput">City</label>
+                    <input type="text" id="cityInput" name="city" >
+                </div>
+                <div class="input-field">
+                    <label for="stateInput">State</label>
+                    <input type="text" id="stateInput" name="state" >
+                </div>
+                <div class="input-field">
+                    <label for="streetInput">Street</label>
+                    <input type="text" id="streetInput" name="street" >
+                </div>
+                <div class="input-field">
+                    <label for="zipcodeInput">Zipcode</label>
+                    <input type="text" id="zipcodeInput" name="zipcode" >
+                </div>
+            </div>
+              
+                <button type="submit" class="saveChanges" >Save Changes</button>
+            </form>
+       
+    </main>
+</body>
+<script src="../script/EditProfile.js"></script>
+</html>
